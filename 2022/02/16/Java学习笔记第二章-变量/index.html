@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>java学习笔记第二章-变量 - 鱼吃猫</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="Java学习笔记第二章-变量一、变量变量就是申请内存来存储值，也就是说，当创建变量的时候，需要在内存中申请空间
+内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来存储该类型的数据
+变量,"> 
+    <meta name="author" content="车文杰"> 
+    <link rel="alternative" href="atom.xml" title="鱼吃猫" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="java学习笔记第二章-变量 - 鱼吃猫"/>
+    <meta name="twitter:description" content="Java学习笔记第二章-变量一、变量变量就是申请内存来存储值，也就是说，当创建变量的时候，需要在内存中申请空间
+内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来存储该类型的数据
+变量,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="鱼吃猫"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="java学习笔记第二章-变量 - 鱼吃猫"/>
+    <meta property="og:description" content="Java学习笔记第二章-变量一、变量变量就是申请内存来存储值，也就是说，当创建变量的时候，需要在内存中申请空间
+内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来存储该类型的数据
+变量,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">鱼吃猫</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">java学习笔记第二章-变量</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">java学习笔记第二章-变量</h1>
+        <div class="stuff">
+            <span>二月 16, 2022</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Java学习笔记第二章-变量"><a href="#Java学习笔记第二章-变量" class="headerlink" title="Java学习笔记第二章-变量"></a>Java学习笔记第二章-变量</h1><h3 id="一、变量"><a href="#一、变量" class="headerlink" title="一、变量"></a>一、变量</h3><p>变量就是申请内存来存储值，也就是说，当创建变量的时候，需要在内存中申请空间</p>
+<p>内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来存储该类型的数据</p>
+<h5 id="变量的注意事项："><a href="#变量的注意事项：" class="headerlink" title="变量的注意事项："></a>变量的注意事项：</h5><ol>
+<li>变量必须先声明后使用</li>
+<li>变量在同一个作用域内不能重名</li>
+<li>变量 &#x3D; 数据类型 + 变量名 + 值（三要素）</li>
+</ol>
+<hr>
+<h3 id="二、数据类型"><a href="#二、数据类型" class="headerlink" title="二、数据类型"></a>二、数据类型</h3><p>java的数据类型分为基本数据类型和引用数据类型</p>
+<h5 id="基本数据类型："><a href="#基本数据类型：" class="headerlink" title="基本数据类型："></a>基本数据类型：</h5><p>Java语言提供了八种基本数据类型，六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>数据类型</th>
+<th>占用内存</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>字节型</td>
+<td>1个字节</td>
+<td>-128  ~ 127</td>
+</tr>
+<tr>
+<td>short</td>
+<td>短整型</td>
+<td>2个字节</td>
+<td>-32768 ~ 32767</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整型</td>
+<td>4个字节</td>
+<td>-2147483648 ~ 2147483647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>长整型</td>
+<td>8个字节</td>
+<td>-2^63 ~ 2^63-1</td>
+</tr>
+<tr>
+<td>float</td>
+<td>浮点型</td>
+<td>4个字节</td>
+<td>-3.403E38 ~ 3.403E38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>双精度浮点型</td>
+<td>8个字节</td>
+<td>-1.798E308 ~ 1.798E308</td>
+</tr>
+<tr>
+<td>char</td>
+<td>字符型</td>
+<td>2个字节</td>
+<td>0 ~ 655535</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>布尔型</td>
+<td>1个字节</td>
+<td>true、false</td>
+</tr>
+</tbody></table>
+<h5 id="引用数据类型（先了解即可，后面会详解）："><a href="#引用数据类型（先了解即可，后面会详解）：" class="headerlink" title="引用数据类型（先了解即可，后面会详解）："></a>引用数据类型（先了解即可，后面会详解）：</h5><p>在Java语言中引用数据类型指向一个对象，指向对象的变量是引用变量</p>
+<p>这些变量在声明时被指定为一个特定的类型，变量一旦声明后，其数据类型就不能被改变了</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>class</td>
+<td>类</td>
+</tr>
+<tr>
+<td>interface</td>
+<td>接口</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>数组</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">variable</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">//---整数类型---</span></span><br><span class="line">		<span class="comment">//java的整数类型就是用来存放整数值的，比如1，23，456等等</span></span><br><span class="line">		<span class="type">byte</span> <span class="variable">n1</span> <span class="operator">=</span> <span class="number">1</span>;		<span class="comment">//定义了一个变量名为n1的byte型变量初始值为1</span></span><br><span class="line">		<span class="type">short</span> <span class="variable">n2</span> <span class="operator">=</span> <span class="number">23</span>;		<span class="comment">//定义了一个变量名为n2的short型变量初始值为23</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">n3</span> <span class="operator">=</span> <span class="number">456</span>;		<span class="comment">//定义了一个变量名为n3的int型变量初始值为456</span></span><br><span class="line">		<span class="type">long</span> <span class="variable">n4</span> <span class="operator">=</span> <span class="number">7890l</span>; 	<span class="comment">//定义了一个变量名为n4的long型变量初始值为7890</span></span><br><span class="line">		<span class="comment">//---浮点数类型---</span></span><br><span class="line">		<span class="comment">//java的浮点数类型就是用来存放浮点数值的，比如1.23，4.56789等等</span></span><br><span class="line">		<span class="type">float</span> <span class="variable">f1</span> <span class="operator">=</span> <span class="number">1.23f</span>;		<span class="comment">//定义了一个变量名为f1的float型变量初始值为1.23</span></span><br><span class="line">		<span class="type">double</span> <span class="variable">f2</span> <span class="operator">=</span> <span class="number">4.56789</span>;	<span class="comment">//定义了一个变量名为f2的double型变量初始值为4.56789</span></span><br><span class="line">		<span class="comment">//---字符类型---</span></span><br><span class="line">		<span class="comment">//java的字符类型就是用来存放单字符的，比如&#x27;1&#x27;，&#x27;好&#x27;等等</span></span><br><span class="line">		<span class="type">char</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="string">&#x27;1&#x27;</span>;		<span class="comment">//定义了一个变量名为c1的char型变量初始值为&#x27;1&#x27;</span></span><br><span class="line">		<span class="type">char</span> <span class="variable">c2</span> <span class="operator">=</span> <span class="string">&#x27;好&#x27;</span>;		<span class="comment">//定义了一个变量名为c2的char型变量初始值为&#x27;好&#x27;</span></span><br><span class="line">		<span class="comment">//---布尔类型---</span></span><br><span class="line">		<span class="comment">//java的布尔类型就是用来存放布尔值的，比如true，flase值</span></span><br><span class="line">		<span class="type">boolean</span> <span class="variable">b1</span> <span class="operator">=</span> <span class="literal">true</span>;		<span class="comment">//定义了一个变量名为b1的boolean型变量初始值为true</span></span><br><span class="line">		<span class="type">boolean</span> <span class="variable">b2</span> <span class="operator">=</span> <span class="literal">false</span>;		<span class="comment">//定义了一个变量名为b2的boolean型变量初始值为false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、注意事项"><a href="#三、注意事项" class="headerlink" title="三、注意事项"></a>三、注意事项</h3><h5 id="整数类型："><a href="#整数类型：" class="headerlink" title="整数类型："></a>整数类型：</h5><ol>
+<li>各整数类型有固定的范围和字段长度，不受具体OS（操作系统）的影响，以保证java程序的可移植性</li>
+<li>整数常量默认为int型，声明long型常量必须在数值后面加上’l’或’L’</li>
+<li>bit（位）：计算机中的最小存储单位；byte（字节）：计算机中的基本存储单元；1byte &#x3D; 8bit</li>
+</ol>
+<h5 id="浮点数类型："><a href="#浮点数类型：" class="headerlink" title="浮点数类型："></a>浮点数类型：</h5><ol>
+<li><p>与整数类型类似，浮点数类型也有固定的范围和字段长度，不受具体OS的影响，以保证java程序的可移植性</p>
+</li>
+<li><p>浮点数类型默认为double型，声明float型常量必须在数值后面加上’f’或’F’</p>
+</li>
+<li><p>浮点数常量有两种表现形式：</p>
+<ul>
+<li>十进制形式：如5.12、5.12.0f、.512（当整数部分为0时可以忽略，但小数点必须要）</li>
+<li>科学计数法形式：如5.12e2、5.12E-2（’e’或’E’都可以表示幂）</li>
+</ul>
+</li>
+<li><p>通常情况下，应该使用double型的浮点数，因为它比float型的浮点数精确度更高</p>
+</li>
+<li><p>浮点数使用陷阱：（2.7）和（8.1 &#x2F; 3）的比较</p>
+<ul>
+<li>因为（8.1 &#x2F; 3）得到的是一个接近2.7的浮点数，而不是2.7，二者并不相等</li>
+<li>于是在做判断条件if(2.7 &#x3D;&#x3D; (8.1 &#x2F; 3))时，无法得到想要的结果</li>
+<li>正确的写法：if(Math.abs(2.7 - (8.1 &#x2F; 3)) &lt; 0.000001(自定精度))</li>
+<li>Math.abs()方法是取两个数的差值，这样当差值非常小，小到自定的精度时，就认为两者相等</li>
+</ul>
+</li>
+</ol>
+<h5 id="字符类型："><a href="#字符类型：" class="headerlink" title="字符类型："></a>字符类型：</h5><ol>
+<li>字符常量是用单引号括起来的单个字符</li>
+<li>允许使用转义字符来将其后的字符转变为特殊字符型常量</li>
+<li>在java中，char类型的本质是一个整数，在输出时，输出的是Unicode码对应的字符</li>
+<li>char类型是可以进行运算的，相当于一个整数，因为它有对应的Unicode码值</li>
+<li>字符类型本质的探讨：<ul>
+<li>存储：’a’ &#x3D;&gt; Unicode码值：97 &#x3D;&gt; 二进制：01100001 &#x3D;&gt; 进行存储</li>
+<li>读取：二进制：01100001 &#x3D;&gt; Unicode码值：97 &#x3D;&gt; ‘a’ &#x3D;&gt; 进行读取</li>
+</ul>
+</li>
+</ol>
+<h5 id="布尔类型："><a href="#布尔类型：" class="headerlink" title="布尔类型："></a>布尔类型：</h5><ol>
+<li>只允许取值为true或false</li>
+<li>适用于逻辑运算，一般用于程序流程的控制</li>
+<li>不可以用0或非0的整数替代false或true，这点和C语言不同</li>
+</ol>
+<hr>
+<h3 id="四、类型转换"><a href="#四、类型转换" class="headerlink" title="四、类型转换"></a>四、类型转换</h3><h5 id="自动类型转换："><a href="#自动类型转换：" class="headerlink" title="自动类型转换："></a>自动类型转换：</h5><ol>
+<li>在进行赋值或运算时，精度小的类型会自动转换为精度大的数据类型</li>
+<li>当byte、short或char三者进行计算时首先会将其数据类型转换为int类型</li>
+<li>自动提升原则：<ul>
+<li>表达式结果的类型自动提升为操作数中最大的类型</li>
+</ul>
+</li>
+<li>数据类型按精度大小排序为：<ul>
+<li>char &gt; int &gt; long &gt; float &gt; double</li>
+<li>byte &gt; short &gt; int &gt; long &gt; float &gt; double</li>
+<li>char和byte及short 之间不可转换，boolean不参与类型的自动转换</li>
+</ul>
+</li>
+</ol>
+<h5 id="强制转换类型："><a href="#强制转换类型：" class="headerlink" title="强制转换类型："></a>强制转换类型：</h5><ol>
+<li>是自动转换类型的逆过程，将容量大的数据类型转换为容量小的数据类型</li>
+<li>使用时要加上强制转换符’()’，但可能会造成精度损失或数据溢出，格外需要注意</li>
+<li>强制转换符只针对最近的操作数有效，往往会使用小括号提升优先级</li>
+<li>char类型可以保存int类型的常量值，但不能保存int类型的变量值，此时需要强制转换</li>
+<li>byte和short类型在进行运算时，当作int类型处理</li>
+</ol>
+<h3 id="五、标识符"><a href="#五、标识符" class="headerlink" title="五、标识符"></a>五、标识符</h3><p>在java语言中，对各种变量、方法和类等命名时使用的字符序列称为标识符</p>
+<p>凡是可以自己起名字的地方都叫标识符，例如：int num &#x3D; 100；其中的num就叫标识符</p>
+<h5 id="标识符的命名规则："><a href="#标识符的命名规则：" class="headerlink" title="标识符的命名规则："></a>标识符的命名规则：</h5><ol>
+<li><p>由26个英文字母的大小写、0到9数字、_下划线或$符号组成</p>
+</li>
+<li><p>不能以数字开头，且标识符不能是关键字或保留字，但是可以包括关键字和保留字</p>
+<ul>
+<li>关键字: 被java语言赋予了特殊含义，有专门的用途，用户不可将其作为标识符</li>
+<li>保留字: 现java语言尚未使用，但以后的版本可能会作为关键字使用，用户不可将其作为标识符</li>
+</ul>
+</li>
+<li><p>java语言严格区分大小写，长度无限制，标识符不能包含空格</p>
+</li>
+</ol>
+<h5 id="标识符的命名规范："><a href="#标识符的命名规范：" class="headerlink" title="标识符的命名规范："></a>标识符的命名规范：</h5><ol>
+<li>包名：所有字母都小写。如：aaa.bbb.ccc</li>
+<li>类名、接口名：所有单词的首字母大写。如：AaaBbbCcc（大驼峰）</li>
+<li>方法名、变量名：第一个单词的首字母小写，从第二个单词开始每个单词的首字母大写。如：aaaBbbCcc（小驼峰或驼峰）</li>
+<li>常量名：所有字母都大写，每个单词之间用下划线连接。如：AAA_BBB_CCC</li>
+<li>更多的命名规范，推荐看《阿里巴巴Java开发手册》</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

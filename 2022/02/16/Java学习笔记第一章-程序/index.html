@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>java学习笔记第一章-程序 - 鱼吃猫</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="java学习笔记第一章-程序一、程序通过下面两个简单的java程序，打开java语言的大门
+简单的看一看即可，不需要彻底理解，后面通过我们一步一步的学习，就会明白每一条代码的意思
+java的输出程序,"> 
+    <meta name="author" content="车文杰"> 
+    <link rel="alternative" href="atom.xml" title="鱼吃猫" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="java学习笔记第一章-程序 - 鱼吃猫"/>
+    <meta name="twitter:description" content="java学习笔记第一章-程序一、程序通过下面两个简单的java程序，打开java语言的大门
+简单的看一看即可，不需要彻底理解，后面通过我们一步一步的学习，就会明白每一条代码的意思
+java的输出程序,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="鱼吃猫"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="java学习笔记第一章-程序 - 鱼吃猫"/>
+    <meta property="og:description" content="java学习笔记第一章-程序一、程序通过下面两个简单的java程序，打开java语言的大门
+简单的看一看即可，不需要彻底理解，后面通过我们一步一步的学习，就会明白每一条代码的意思
+java的输出程序,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">鱼吃猫</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">java学习笔记第一章-程序</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">java学习笔记第一章-程序</h1>
+        <div class="stuff">
+            <span>二月 16, 2022</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="java学习笔记第一章-程序"><a href="#java学习笔记第一章-程序" class="headerlink" title="java学习笔记第一章-程序"></a>java学习笔记第一章-程序</h1><h3 id="一、程序"><a href="#一、程序" class="headerlink" title="一、程序"></a>一、程序</h3><p>通过下面两个简单的java程序，打开java语言的大门</p>
+<p>简单的看一看即可，不需要彻底理解，后面通过我们一步一步的学习，就会明白每一条代码的意思</p>
+<h5 id="java的输出程序："><a href="#java的输出程序：" class="headerlink" title="java的输出程序："></a>java的输出程序：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OutPut</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World !&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">代码解读：</span></span><br><span class="line"><span class="comment">OutPut&#123; &#125; 表示类的开始和结束</span></span><br><span class="line"><span class="comment">public class OutPut 中，class表示OutPut是一个类，public表示OutPut是公有的</span></span><br><span class="line"><span class="comment">main() &#123; &#125; 表示方法的开始和结束</span></span><br><span class="line"><span class="comment">public static void main(String[] args) 表示一个主方法，即我们程序的入口</span></span><br><span class="line"><span class="comment">System.out.println(&quot;Hello World !&quot;) 表示将&quot;Hello World !&quot;输出到屏幕</span></span><br><span class="line"><span class="comment">&#x27;;&#x27; 表示语句结束</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="java的输入程序："><a href="#java的输入程序：" class="headerlink" title="java的输入程序："></a>java的输入程序：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Input</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">myScanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;Who are you ?&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> myScanner.next();</span><br><span class="line">        System.out.println(name + <span class="string">&quot; , Welcome to the Java World !&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">代码解读：</span></span><br><span class="line"><span class="comment">Scanner类 表示简单文本扫描</span></span><br><span class="line"><span class="comment">import java.util.Scanner 表示把java.util包下的Scanner类导入此源文件</span></span><br><span class="line"><span class="comment">Scanner myScanner创建Scanner类对象，new创建一个Scanner(System.in)类对象myScanner</span></span><br><span class="line"><span class="comment">myScanner.next() 调用myScanner对象的next方法，接收用户的字符串输入</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二、运行过程"><a href="#二、运行过程" class="headerlink" title="二、运行过程"></a>二、运行过程</h3><p>编写代码的文件是以.java为后缀的源文件，通过编译生成以.class为后缀的字节码文件</p>
+<ul>
+<li><p>Hello.java(源文件) &#x3D;&gt; javac Hello.java 编译程序</p>
+</li>
+<li><p>Hello.class(字节码文件) &#x3D;&gt; java Hello  运行程序</p>
+</li>
+</ul>
+<h5 id="什么是编译："><a href="#什么是编译：" class="headerlink" title="什么是编译："></a>什么是编译：</h5><ol>
+<li>有了可编译的java源程序(例如Hello.java源文件)</li>
+<li>在该源文件目录下，通过javac.exe编译工具对java源文件进行编译</li>
+<li>如果程序编译没有错误，将没有任何提示，并在当前目录下会生成一个字节码文件</li>
+</ol>
+<h5 id="什么是运行："><a href="#什么是运行：" class="headerlink" title="什么是运行："></a>什么是运行：</h5><ol>
+<li>有了可执行的java程序(例如Hello.class字节码文件)</li>
+<li>通过java.exe运行工具对字节码文件进行执行</li>
+</ol>
+<hr>
+<h3 id="三、注意事项"><a href="#三、注意事项" class="headerlink" title="三、注意事项"></a>三、注意事项</h3><ol>
+<li>java源文件以.java为扩展名</li>
+<li>源文件的基本组成部分是类(class)</li>
+<li>java应用程序的执行入口是main()方法：public static void main(String[] args) { … }</li>
+<li>java语言严格区分大小写，以’;’表示每条语句的结束符号</li>
+<li>大括号都是成对出现的，缺一不可，养成先写{ }后再在里面写代码的习惯</li>
+<li>一个源文件中只能有一个public类，其类名与文件名必须相同，其他非public类的个数不限</li>
+<li>main()方法也可以写在非public类中，然后指定运行的非public类，这样入口方法就是非public类的main()方法</li>
+<li>对每一次修改的源文件都需要保存后，重新进行编译，然后再运行</li>
+</ol>
+<h3 id="四、代码风格"><a href="#四、代码风格" class="headerlink" title="四、代码风格"></a>四、代码风格</h3><ul>
+<li>行尾风格（推荐）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VeryGood</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Very Good !&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>次行风格</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VeryGood</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Very Good !&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、注释"><a href="#五、注释" class="headerlink" title="五、注释"></a>五、注释</h3><p>用于注释说明和解释程序代码的文字就是注释</p>
+<ol>
+<li>注释提高了代码的可读性</li>
+<li>注释是一个程序员必须要具有的良好的编程习惯</li>
+</ol>
+<p>java程序的注释一共分为三种类型：</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>注释类型</th>
+<th>使用方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;&#x2F;</td>
+<td>单行注释</td>
+<td>&#x2F;&#x2F; 这是一个单行注释</td>
+</tr>
+<tr>
+<td>&#x2F;* *&#x2F;</td>
+<td>多行注释</td>
+<td>&#x2F;* 这是一个多行注释 *&#x2F;</td>
+</tr>
+<tr>
+<td>&#x2F;** *&#x2F;</td>
+<td>文档注释</td>
+<td>&#x2F;** 这是一个文档注释 *&#x2F;</td>
+</tr>
+</tbody></table>
+<p>注意：注释的文字，不会被JVM解释执行，且多行注释里面不允许有多行注释的嵌套</p>
+<h3 id="六、转义字符"><a href="#六、转义字符" class="headerlink" title="六、转义字符"></a>六、转义字符</h3><p>由于计算机的某些特殊字符无法直接用字符表示</p>
+<p>就可以通过转义字符”\“的方式表示，也就是将原字符的含义转为其他含义</p>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>代表意思</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\‘</td>
+<td>单引号（’）</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>双引号（”）</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>反斜杠（\）</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>横向制表符</td>
+</tr>
+</tbody></table>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
