@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="chewenjie"><title>CSS学习笔记第五章-浮动 · 鱼吃猫</title><meta name="description" content="一、传统网页布局网页布局的本质——就是用CSS来摆放盒子，把盒子摆放到相应位置。
+CSS提供了三种传统布局方式：
+
+普通流（标准流）
+浮动
+定位
+
+
+二、标准流（普通流&amp;#x2F;文档流）所谓标准流：就是标签按照规定好默认方式排列
+1.块级元素会独占一行，从上向下顺序排列
+常用元素：div、hr、p"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.webp"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首页</a></li><li> <a href="/archives">目录</a></li><li> <a href="/tags">标签</a></li><li> <a href="/about">关于</a></li><li> <a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/logo@2x.webp" style="width:200px;" alt="favicon"><h3 title=""><a href="/">鱼吃猫</a></h3><div class="description"><p>一个简单而美丽的博客</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/chewenjie"><i class="fa fa-github"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> chewenjie</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>CSS学习笔记第五章-浮动</a></h3></div><div class="post-content"><p><h3 id="一、传统网页布局"><a href="#一、传统网页布局" class="headerlink" title="一、传统网页布局"></a>一、传统网页布局</h3><p>网页布局的本质——就是用CSS来摆放盒子，把盒子摆放到相应位置。</p>
+<p><strong>CSS提供了三种传统布局方式：</strong></p>
+<ul>
+<li>普通流（标准流）</li>
+<li>浮动</li>
+<li>定位</li>
+</ul>
+<hr>
+<h3 id="二、标准流（普通流-x2F-文档流）"><a href="#二、标准流（普通流-x2F-文档流）" class="headerlink" title="二、标准流（普通流&#x2F;文档流）"></a>二、标准流（普通流&#x2F;文档流）</h3><p>所谓标准流：就是标签按照规定好默认方式排列</p>
+<h5 id="1-块级元素会独占一行，从上向下顺序排列"><a href="#1-块级元素会独占一行，从上向下顺序排列" class="headerlink" title="1.块级元素会独占一行，从上向下顺序排列"></a>1.块级元素会独占一行，<strong>从上向下</strong>顺序排列</h5><ul>
+<li>常用元素：div、hr、p、h1~h6、ul、ol、dl、form、table 等</li>
+</ul>
+<h5 id="2-行内元素会按照从左到右顺序排列，碰到父元素边缘则自动换行"><a href="#2-行内元素会按照从左到右顺序排列，碰到父元素边缘则自动换行" class="headerlink" title="2.行内元素会按照从左到右顺序排列，碰到父元素边缘则自动换行"></a>2.行内元素会按照从左到右顺序排列，碰到父元素边缘则自动换行</h5><ul>
+<li>常用元素：span、a、i、em 等</li>
+</ul>
+<p>以上都是标准流布局，我们前面学习的就是标准流，<strong>标准流是最基本的布局方式。</strong></p>
+<p><strong>注意：</strong>实际开发中，一个页面基本都包含了这三种布局方式（移动端会学习新的布局方式）。</p>
+<hr>
+<h3 id="三、为什么需要浮动？"><a href="#三、为什么需要浮动？" class="headerlink" title="三、为什么需要浮动？"></a>三、为什么需要浮动？</h3><p>因为有很多的布局效果，标准流没有办法完成，而<strong>浮动可以改变元素标签默认的排列方式，</strong>此时就可以利用浮动来完成布局。</p>
+<p>浮动最典型的应用：<strong>可以让多个块级元素在一行内排列显示。</strong></p>
+<p><strong>网页布局第一准则</strong>：</p>
+<ul>
+<li>多个块级元素纵向排列找标准流</li>
+<li>多个块级元素横向排列则找浮动</li>
+</ul>
+<hr>
+<h3 id="四、什么是浮动？"><a href="#四、什么是浮动？" class="headerlink" title="四、什么是浮动？"></a>四、什么是浮动？</h3><p>float属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含快或另一个浮动框的边缘则换行。</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;  <span class="attribute">float</span>: 属性值;  &#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>none</strong></td>
+<td>元素不浮动（默认值）</td>
+</tr>
+<tr>
+<td align="left"><strong>left</strong></td>
+<td>元素向左浮动</td>
+</tr>
+<tr>
+<td align="left"><strong>right</strong></td>
+<td>元素向右浮动</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="五、浮动的特性（重难点）"><a href="#五、浮动的特性（重难点）" class="headerlink" title="五、浮动的特性（重难点）"></a>五、浮动的特性（重难点）</h3><p>加入了浮动之后的元素，会具有很多特性，需要我们掌握的。</p>
+<h5 id="1-浮动元素会脱离标准流（脱标）"><a href="#1-浮动元素会脱离标准流（脱标）" class="headerlink" title="1.浮动元素会脱离标准流（脱标）"></a>1.浮动元素会脱离标准流（脱标）</h5><ol>
+<li>脱离标准流的控制（浮），移动到指定位置（动）。</li>
+<li>浮动的盒子<strong>不再保留原先的位置。</strong></li>
+</ol>
+<h5 id="2-浮动的元素会在一行内显示并且元素顶部对齐"><a href="#2-浮动的元素会在一行内显示并且元素顶部对齐" class="headerlink" title="2.浮动的元素会在一行内显示并且元素顶部对齐"></a>2.浮动的元素会在一行内显示并且元素顶部对齐</h5><ol>
+<li>如果多个盒子都设置了浮动，则它们会按照属性值一行内显示并且顶端对齐排列。</li>
+<li>浮动的元素是相互贴靠在一起的<strong>（不会有缝隙）</strong>，如果父级的宽度装不下这些浮动的盒子，<strong>多出的盒子会另起一行对齐显示。</strong></li>
+</ol>
+<h5 id="3-浮动的元素会具有行内块元素的特性"><a href="#3-浮动的元素会具有行内块元素的特性" class="headerlink" title="3.浮动的元素会具有行内块元素的特性"></a>3.浮动的元素会具有行内块元素的特性</h5><ol>
+<li>任何元素都可以浮动，不管原先是什么模式的元素，添加浮动之后都会<strong>具有行内块元素相似的特性。</strong></li>
+<li>如果块级元素没有设置宽度，默认宽度和父级元素一样宽，<strong>但是添加浮动后，它的宽度根据内容来决定。</strong></li>
+</ol>
+<hr>
+<h3 id="六、浮动布局的注意点"><a href="#六、浮动布局的注意点" class="headerlink" title="六、浮动布局的注意点"></a>六、浮动布局的注意点</h3><h5 id="1-浮动元素和标准的父元素搭配使用"><a href="#1-浮动元素和标准的父元素搭配使用" class="headerlink" title="1.浮动元素和标准的父元素搭配使用"></a>1.浮动元素和标准的父元素搭配使用</h5><p>为了约束浮动元素的位置，网页布局一般采取的策略是浮动盒子和父元素盒子搭配使用。</p>
+<p><strong>先用标准流的父元素排列上下位置，内部的子元素采取浮动排列左右位置，符合网页布局第一准则。</strong></p>
+<h5 id="2-一个元素浮动了，理论上其余的兄弟元素也要浮动"><a href="#2-一个元素浮动了，理论上其余的兄弟元素也要浮动" class="headerlink" title="2.一个元素浮动了，理论上其余的兄弟元素也要浮动"></a>2.一个元素浮动了，理论上其余的兄弟元素也要浮动</h5><p>一个盒子里面有多个子盒子，如果其中一个盒子浮动了，那么其他盒子也应该浮动，以防止引起问题。</p>
+<p><strong>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流。</strong></p>
+<hr>
+<h3 id="七、清除浮动"><a href="#七、清除浮动" class="headerlink" title="七、清除浮动"></a>七、清除浮动</h3><h5 id="1-为什么需要清除浮动"><a href="#1-为什么需要清除浮动" class="headerlink" title="1.为什么需要清除浮动"></a>1.为什么需要清除浮动</h5><p>由于父级盒子很多情况下，不方便给高度，但是盒子浮动又不占有标准流的位置，最后父级盒子高度为0时，就会影响下面的标准流盒子。</p>
+<h5 id="2-清除浮动的本质"><a href="#2-清除浮动的本质" class="headerlink" title="2.清除浮动的本质"></a>2.清除浮动的本质</h5><ul>
+<li>清除浮动元素对标准流造成的影响</li>
+<li>如果父级盒子本身有高度，则不需要清除浮动</li>
+<li>清除浮动之后，父级盒子就会根据浮动的子盒子自动检测高度，这样父级就有了高度，就不会影响后面的标准流了</li>
+</ul>
+<h5 id="4-清除浮动的策略"><a href="#4-清除浮动的策略" class="headerlink" title="4.清除浮动的策略"></a>4.清除浮动的策略</h5><p>清除浮动就是闭合浮动，只让浮动在父盒子内部影响，不影响父盒子外面的其他盒子。</p>
+<hr>
+<h3 id="八、清除浮动的方法"><a href="#八、清除浮动的方法" class="headerlink" title="八、清除浮动的方法"></a>八、清除浮动的方法</h3><h5 id="1-额外标签法"><a href="#1-额外标签法" class="headerlink" title="1.额外标签法"></a>1.额外标签法</h5><p>额外标签法也称为隔墙法，是W3C推荐的做法</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;  <span class="attribute">clear</span>: 属性值;  &#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>left</strong></td>
+<td>不允许左侧有浮动元素（清除左侧浮动的影响）</td>
+</tr>
+<tr>
+<td align="left"><strong>right</strong></td>
+<td>不允许右侧有浮动元素（清除右侧浮动的影响）</td>
+</tr>
+<tr>
+<td align="left"><strong>both</strong></td>
+<td>同时清除左右两侧浮动的影响（实际开发中，常用）</td>
+</tr>
+</tbody></table>
+<p>额外标签法就是在最后一个浮动的子元素后面再添加一个空的标签，为其添加清除浮动样式。</p>
+<p>例如：<code>&lt;div style=&quot; clear: both &quot;&gt;&lt;/div&gt;</code></p>
+<p>优点：通俗易懂，书写方便</p>
+<p>缺点：会导致添加了许多无意义的标签，结构化较差</p>
+<h5 id="2-父级添加overflow属性（简单了解）"><a href="#2-父级添加overflow属性（简单了解）" class="headerlink" title="2.父级添加overflow属性（简单了解）"></a>2.父级添加overflow属性（简单了解）</h5><p>给父级元素添加overflow属性，将其属性值设置为hidden、auto或scroll。</p>
+<p>优点：代码简洁</p>
+<p>缺点：无法显示溢出的部分</p>
+<h5 id="3-父级添加after伪元素"><a href="#3-父级添加after伪元素" class="headerlink" title="3.父级添加after伪元素"></a>3.父级添加after伪元素</h5><p>此方式是额外标签法的升级版，给父级元素添加事先预定义好的after伪元素选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123; <span class="comment">/* IE6、7专有 */</span></span><br><span class="line">    *zoom: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>优点：没有增加额外的标签，结构更简单</p>
+<p>缺点：照顾低版本浏览器</p>
+<p>代表网站：百度、淘宝、网易等</p>
+<h5 id="4-父级添加双伪元素"><a href="#4-父级添加双伪元素" class="headerlink" title="4.父级添加双伪元素"></a>4.父级添加双伪元素</h5><p>给父级元素添加事先预定义好的双伪元素选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>, <span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    *zoom: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>优点：代码更简洁</p>
+<p>缺点：照顾低版本浏览器</p>
+<p>代表网站：小米、腾讯等</p>
+<hr>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: chewenjie</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-02-14</span><i class="fa fa-tag"></i><span class="leancloud_visitors"></span><span>大约1651个字, 5分钟30秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2022/02/14/CSS学习笔记第五章-浮动/,鱼吃猫,CSS学习笔记第五章-浮动,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2022/02/15/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%AE%9A%E4%BD%8D/" title="CSS学习笔记第六章-定位">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2022/02/13/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7%E5%8F%8A%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" title="CSS学习笔记第四章-三大特性及盒子模型">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

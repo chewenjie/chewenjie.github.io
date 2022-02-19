@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="chewenjie"><title>CSS学习笔记第八章-高级技巧 · 鱼吃猫</title><meta name="description" content="一、精灵图为什么需要精灵图：一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片的加载，造成服务器请求压力过大，这将大大降低网页的加载速度
+因此，为了有效地减少服务器接收和发送请求的次数，提高网页的加载速度，出现了CSS精灵技术
+核心原理：将网页中的"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.webp"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首页</a></li><li> <a href="/archives">目录</a></li><li> <a href="/tags">标签</a></li><li> <a href="/about">关于</a></li><li> <a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/logo@2x.webp" style="width:200px;" alt="favicon"><h3 title=""><a href="/">鱼吃猫</a></h3><div class="description"><p>一个简单而美丽的博客</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/chewenjie"><i class="fa fa-github"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> chewenjie</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>CSS学习笔记第八章-高级技巧</a></h3></div><div class="post-content"><p><h3 id="一、精灵图"><a href="#一、精灵图" class="headerlink" title="一、精灵图"></a>一、精灵图</h3><h5 id="为什么需要精灵图："><a href="#为什么需要精灵图：" class="headerlink" title="为什么需要精灵图："></a>为什么需要精灵图：</h5><p>一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片的加载，造成服务器请求压力过大，这将大大降低网页的加载速度</p>
+<p>因此，为了有效地减少服务器接收和发送请求的次数，提高网页的加载速度，出现了CSS精灵技术</p>
+<p>核心原理：将网页中的一些小背景图像整合到一张大图中，这样服务器只需要一次请求就可以了</p>
+<p>主要借助于背景位置来实现：<strong>background-position</strong></p>
+<hr>
+<h3 id="二、字体图标"><a href="#二、字体图标" class="headerlink" title="二、字体图标"></a>二、字体图标</h3><p>主要用于显示网页中通用、常用的一些小图标</p>
+<ul>
+<li>轻量级：一个图标字体要比一系列的图像要小，一旦字体加载了，图标会马上渲染出来</li>
+<li>灵活性：本质其实就是文字，可以很随意的改变颜色、产生阴影、透明效果、旋转等</li>
+<li>兼容性：几乎支持所有的浏览器</li>
+</ul>
+<p>注意：字体图标不能替代精灵图技术，只是对工作中图标部分技术的提升和优化</p>
+<p>字体图标是一些网页常见的小图标，我们直接网上下载即可</p>
+<ul>
+<li>字体图标的下载</li>
+<li>字体图标的引用</li>
+<li>字体图标的追加</li>
+</ul>
+<hr>
+<h3 id="三、CSS三角"><a href="#三、CSS三角" class="headerlink" title="三、CSS三角"></a>三、CSS三角</h3><p>网页中常见的一些三角形，使用CSS可以直接画出来，不必做成图片或者字体图标</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 黑色小三角 范例 */</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-left-color</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="四、CSS用户界面样式"><a href="#四、CSS用户界面样式" class="headerlink" title="四、CSS用户界面样式"></a>四、CSS用户界面样式</h3><p>所谓的界面样式，就是更改一些用户操作样式，以便提高更好的用户体验</p>
+<h5 id="鼠标样式："><a href="#鼠标样式：" class="headerlink" title="鼠标样式："></a>鼠标样式：</h5><p>设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">cursor</span>: default | pointer | move | text | not-allowed</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>default</strong></td>
+<td>指针<strong>（默认）</strong></td>
+</tr>
+<tr>
+<td><strong>pointer</strong></td>
+<td>小手</td>
+</tr>
+<tr>
+<td><strong>move</strong></td>
+<td>移动</td>
+</tr>
+<tr>
+<td><strong>text</strong></td>
+<td>文本</td>
+</tr>
+<tr>
+<td><strong>not-allowed</strong></td>
+<td>禁止</td>
+</tr>
+</tbody></table>
+<h5 id="表单轮廓："><a href="#表单轮廓：" class="headerlink" title="表单轮廓："></a>表单轮廓：</h5><p>给表单添加以下样式后，就可以去掉默认的蓝色边框</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">outline</span>: <span class="number">0</span> | none;</span><br></pre></td></tr></table></figure>
+
+<h5 id="防止表单域拖拽："><a href="#防止表单域拖拽：" class="headerlink" title="防止表单域拖拽："></a>防止表单域拖拽：</h5><p>实际开发中，我们文本域右下角是不可以拖拽的</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">textarea</span> &#123; <span class="attribute">resize</span>: none; &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="五、vertical-align-属性"><a href="#五、vertical-align-属性" class="headerlink" title="五、vertical-align 属性"></a>五、vertical-align 属性</h3><p>用于设置一个元素的垂直对齐方式，但是它只针对于行内元素或者行内块元素有效</p>
+<p>使用场景：经常用于设置图片或表单和文字的垂直对齐</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vertical-align</span>: baseline | top | middle | bottom</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>baseline</strong></td>
+<td>元素放置在父元素的基线上<strong>（默认）</strong></td>
+</tr>
+<tr>
+<td><strong>top</strong></td>
+<td>把元素的顶端与行中最高元素的顶端对齐</td>
+</tr>
+<tr>
+<td><strong>middle</strong></td>
+<td>把元素放置在父元素的中部</td>
+</tr>
+<tr>
+<td><strong>bottom</strong></td>
+<td>把元素的底端与行中最低元素的底端对齐</td>
+</tr>
+</tbody></table>
+<h5 id="解决图片底部默认有空白缝隙的问题："><a href="#解决图片底部默认有空白缝隙的问题：" class="headerlink" title="解决图片底部默认有空白缝隙的问题："></a>解决图片底部默认有空白缝隙的问题：</h5><p>图片底侧默认的会有一个空白缝隙，原因是行内块元素会和文字的基线对齐</p>
+<p>主要解决方法有两种：</p>
+<ul>
+<li>给图片添加 vertical-align: top | middle | bottom 等<strong>（提倡使用）</strong></li>
+<li>把图片转换为块级元素 display: block</li>
+</ul>
+<hr>
+<h3 id="六、溢出的文字省略号显示"><a href="#六、溢出的文字省略号显示" class="headerlink" title="六、溢出的文字省略号显示"></a>六、溢出的文字省略号显示</h3><p>当一段文本溢出了，突然的截断会不好看，此时用省略号作为结尾</p>
+<h5 id="单行文本溢出显示省略号："><a href="#单行文本溢出显示省略号：" class="headerlink" title="单行文本溢出显示省略号："></a>单行文本溢出显示省略号：</h5><p>必须满足三个条件：</p>
+<ul>
+<li>将文本强制一行内显示</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 默认 normal 自动换行 */</span></span><br><span class="line"><span class="attribute">white-space</span>: nowrap;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>溢出的部分隐藏</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>: hidden;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>文字用省略号替代溢出的部分</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">text-overflow</span>: ellipsis;</span><br></pre></td></tr></table></figure>
+
+<h5 id="多行文本溢出显示省略号："><a href="#多行文本溢出显示省略号：" class="headerlink" title="多行文本溢出显示省略号："></a>多行文本溢出显示省略号：</h5><p>多行文本溢出显示省略号，有较大的兼容性问题，适合于webKit浏览器或移动端（移动端大部分是webKit内核）</p>
+<p>代码实现如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>: hidden;</span><br><span class="line"><span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line"><span class="comment">/* 弹性伸缩盒子模型显示 */</span></span><br><span class="line"><span class="attribute">display</span>: -webkit-box;</span><br><span class="line"><span class="comment">/* 限制在一个块元素中显示的文本的行数 */</span></span><br><span class="line">-webkit-line-clamp: <span class="number">2</span>;</span><br><span class="line"><span class="comment">/* 设置或检索伸缩盒子的子元素的排列方式 */</span></span><br><span class="line">-webkit-box-orient: vertical;</span><br></pre></td></tr></table></figure>
+
+<p>注意：实际开发中，更推荐后端来做这个效果，因为后端人员可以设置显示多少个子，操作更简单</p>
+<hr>
+<h3 id="七、常见布局技巧"><a href="#七、常见布局技巧" class="headerlink" title="七、常见布局技巧"></a>七、常见布局技巧</h3><h5 id="margin负值的运用："><a href="#margin负值的运用：" class="headerlink" title="margin负值的运用："></a>margin负值的运用：</h5><p>当一行内的有多个相同盒子排列显示时，如果给其添加边框后，盒子与盒子直接的缝隙会叠加</p>
+<p>此时，给盒子添加如下样式，就可以清楚缝隙叠加</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 此时的负值是边框的宽度 */</span></span><br><span class="line"><span class="attribute">margin-left</span>: -<span class="number">1px</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这样的做法其实就是，下一个盒子将上一个盒子的边框压住了</p>
+<p>浏览器渲染的时候是一个一个渲染的，不必担心所有盒子都向左移动了边框没有压住的情况</p>
+<p>实现鼠标移动到盒子上时，显示对应的边框，则可以通过以下两种方法：</p>
+<ul>
+<li>如果当前盒子没有定位，则加相对定位（保留原来位置，压住其他盒子的边框）</li>
+<li>如果当前盒子有定位，则加 z-index 来提高层级</li>
+</ul>
+<h5 id="文字围绕浮动元素："><a href="#文字围绕浮动元素：" class="headerlink" title="文字围绕浮动元素："></a>文字围绕浮动元素：</h5><p>浮动虽然不保留原来的位置，但是也不会压住文字</p>
+<p>可以根据这个特性，做出文字围绕着图片（浮动元素）的效果</p>
+<h5 id="行内块元素的巧妙运用："><a href="#行内块元素的巧妙运用：" class="headerlink" title="行内块元素的巧妙运用："></a>行内块元素的巧妙运用：</h5><p>要在一行内显示盒子时，将行内元素转换行内块元素，就可以为其设置宽度和高度</p>
+<h5 id="CSS三角强化："><a href="#CSS三角强化：" class="headerlink" title="CSS三角强化："></a>CSS三角强化：</h5><p>在网页中，除了定义等腰三角形外，我们还可以定义其他类型的三角形</p>
+<p>例如：直角三角形</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line"><span class="attribute">border-color</span>: transparent red transparent transparent;</span><br><span class="line"><span class="attribute">border-style</span>: solid;</span><br><span class="line"><span class="attribute">border-width</span>: <span class="number">22px</span> <span class="number">8px</span> <span class="number">0</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="八、CSS初始化"><a href="#八、CSS初始化" class="headerlink" title="八、CSS初始化"></a>八、CSS初始化</h3><p>不同浏览器对有些标签的默认值是不同的，为了消除不同浏览器对HTML网页的呈现差以，照顾浏览器的兼容性，我们需要对CSS进行初始化</p>
+<p>简单理解：CSS初始化是指重设浏览器的样式（也称为CSS reset）</p>
+<p>每个网页都必须首先进行CSS初始化，这里我们以京东的CSS初始化代码为例</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 清除所有标签的外边距和内边距 */</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 清除 em 和 i 的字体倾斜 */</span></span><br><span class="line"><span class="selector-tag">em</span>,</span><br><span class="line"><span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 去除 li 的小圆点 */</span></span><br><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="comment">/* 照顾低版本浏览器，如果图片外面包含了链接会有边框的问题 */</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/* 避免图片底侧有空白缝隙的问题 */</span></span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当我们鼠标经过 button 按钮的时候，鼠标变成小手的形式 */</span></span><br><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">	<span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 改变 a 链接的默认颜色 和 去除下划线 */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">    text-dacoration: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 改变鼠标放在 a 链接上的颜色 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#c81623</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 改变 button 按钮 和 input 表单的文本字体 */</span></span><br><span class="line"><span class="selector-tag">button</span>,</span><br><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: Microsoft YaHei, Heiti SC, tohoma, arial, Hiragino Sans GB, <span class="string">&quot;\5B8B\4F53&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="comment">/* CSS3 抗锯齿性 让文字显示的更加清晰 */</span></span><br><span class="line">    -webkit-<span class="attribute">font-smoothing</span>: antialiased;</span><br><span class="line">    <span class="comment">/* 改变主体的文本颜色 */</span></span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="comment">/* 改变主体的文本字体 */</span></span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">1.5</span> Microsoft YaHei, Heiti SC, tohoma, arial, Hiragino Sans GB, <span class="string">&quot;\5B8B\4F53&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义的元素隐藏样式 */</span></span><br><span class="line"><span class="selector-class">.hide</span>,</span><br><span class="line"><span class="selector-class">.none</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 清除浮动 */</span></span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;.&quot;</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 照顾低版本浏览器 */</span></span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    *zoom: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: chewenjie</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-02-17</span><i class="fa fa-tag"></i><span class="leancloud_visitors"></span><span>大约1953个字, 6分钟30秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2022/02/17/CSS学习笔记第八章-高级技巧/,鱼吃猫,CSS学习笔记第八章-高级技巧,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2022/02/18/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E6%8F%90%E9%AB%98%E5%AF%BC%E8%AF%BB/" title="CSS学习笔记第九章-新增特性">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2022/02/16/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/" title="CSS学习笔记第七章-显示与隐藏">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

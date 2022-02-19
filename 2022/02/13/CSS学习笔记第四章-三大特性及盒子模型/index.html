@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="chewenjie"><title>CSS学习笔记第四章-三大特性及盒子模型 · 鱼吃猫</title><meta name="description" content="一、CSS的三大特性CSS有非常重要的三个特性：层叠性、继承性和优先级
+层叠性：层叠性主要就是解决样式冲突的问题
+相同选择器给设置相同的样式，此时一个样式就会覆盖（层叠）另一个冲突的样式
+层叠性原则：
+
+样式冲突，遵循就近原则，哪个样式离结构近，就会执行哪个样式
+如果样式不冲突，则不会层叠
+
+继承性"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.webp"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首页</a></li><li> <a href="/archives">目录</a></li><li> <a href="/tags">标签</a></li><li> <a href="/about">关于</a></li><li> <a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/logo@2x.webp" style="width:200px;" alt="favicon"><h3 title=""><a href="/">鱼吃猫</a></h3><div class="description"><p>一个简单而美丽的博客</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/chewenjie"><i class="fa fa-github"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> chewenjie</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>CSS学习笔记第四章-三大特性及盒子模型</a></h3></div><div class="post-content"><p><h3 id="一、CSS的三大特性"><a href="#一、CSS的三大特性" class="headerlink" title="一、CSS的三大特性"></a>一、CSS的三大特性</h3><p>CSS有非常重要的三个特性：<strong>层叠性</strong>、<strong>继承性</strong>和<strong>优先级</strong></p>
+<h5 id="层叠性："><a href="#层叠性：" class="headerlink" title="层叠性："></a>层叠性：</h5><p>层叠性主要就是<strong>解决样式冲突的问题</strong></p>
+<p>相同选择器给设置相同的样式，此时一个样式就会覆盖（层叠）另一个冲突的样式</p>
+<p>层叠性原则：</p>
+<ul>
+<li>样式冲突，遵循<strong>就近原则</strong>，哪个样式离结构近，就会执行哪个样式</li>
+<li>如果样式不冲突，则不会层叠</li>
+</ul>
+<h5 id="继承性："><a href="#继承性：" class="headerlink" title="继承性："></a>继承性：</h5><p>继承性就是<strong>子标签会继承父标签的某些样式</strong>，简单理解就是子承父业</p>
+<p>恰当地使用继承可简化代码，降低CSS样式的复杂性</p>
+<p>子元素可以继承父元素的样式（text、font、line 这些元素开头的可以继承，以及 color 属性）</p>
+<p>行高的继承：</p>
+<ul>
+<li>行高可以跟单位也可以不跟单位，不跟单位是就是行高*当前的字体大小</li>
+<li>不跟单位时子元素继承父元素的行高*当前子元素的字体大小</li>
+<li>如果子元素没有设置字体大小，则会继承父元素的字体大小和行高</li>
+<li>不跟单位最大的写法优势就是子元素可以根据自己的字体大小自动调整行高</li>
+</ul>
+<h5 id="优先级："><a href="#优先级：" class="headerlink" title="优先级："></a>优先级：</h5><p>当同一个元素指定了多个选择器时，就会有优先级的产生</p>
+<p>优先级原则：</p>
+<ul>
+<li>选择器相同，则执行层叠性原则</li>
+<li>选择器不同，则根据选择器的权重执行</li>
+</ul>
+<p>选择器权重：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继承、*（通配符）</td>
+<td>0,0,0,0</td>
+</tr>
+<tr>
+<td>元素选择器</td>
+<td>0,0,0,1</td>
+</tr>
+<tr>
+<td>类选择器、伪类选择器</td>
+<td>0,0,1,0</td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>0,1,0,0</td>
+</tr>
+<tr>
+<td>行内样式表</td>
+<td>1,0,0,0</td>
+</tr>
+<tr>
+<td>!important重要的</td>
+<td>无穷大</td>
+</tr>
+</tbody></table>
+<p>口诀：<strong>范围越小，权重越大</strong></p>
+<p>注意：</p>
+<ul>
+<li>权重是有4组数字组成的</li>
+<li>等级判断从左向右，数值相同，则判断下一位数值</li>
+<li>如果元素没有被选择器直接选中，而是<strong>继承得来</strong>的，不管父元素的权重多高，子元素得到的<strong>权重都是0,0,0,0</strong></li>
+<li>复合选择器的权重叠加，但是永远<strong>不会有进位</strong></li>
+</ul>
+<hr>
+<h3 id="二、盒子模型"><a href="#二、盒子模型" class="headerlink" title="二、盒子模型"></a>二、盒子模型</h3><p>网页布局要学习三大核心：<strong>盒子模型</strong> 、<strong>浮动</strong>和<strong>定位</strong></p>
+<p>学习好盒子模型能非常好的帮助我们布局页面</p>
+<h5 id="看透网页布局的本质："><a href="#看透网页布局的本质：" class="headerlink" title="看透网页布局的本质："></a>看透网页布局的本质：</h5><ul>
+<li>先准备好相关的网页元素，网页元素基本都是盒子</li>
+<li>利用CSS设置好盒子样式，然后摆放到相应位置</li>
+<li>最后往盒子里面装内容即可</li>
+</ul>
+<p>网页布局的核心本质：就是利用CSS摆放盒子</p>
+<hr>
+<h3 id="三、盒子模型的组成"><a href="#三、盒子模型的组成" class="headerlink" title="三、盒子模型的组成"></a>三、盒子模型的组成</h3><p>所谓盒子模型就是把HTML页面中的布局元素看作是一个矩形的盒子，也就是一个盛装内容的容器</p>
+<p>CSS盒子模型本质上是一个盒子，封装周围的HTML元素，它包括<strong>边框</strong>、<strong>内边距</strong>、<strong>外边距</strong>和<strong>实际内容</strong></p>
+<ul>
+<li>border：边框</li>
+<li>content：内容</li>
+<li>padding：内边距</li>
+<li>margin：外边距</li>
+</ul>
+<h5 id="border（边框，边框会影响盒子的实际大小）："><a href="#border（边框，边框会影响盒子的实际大小）：" class="headerlink" title="border（边框，边框会影响盒子的实际大小）："></a>border（边框，边框会影响盒子的实际大小）：</h5><p>border 可以设置元素的边框，边框的三部分组成：边框宽度(粗细)、边框样式和边框颜色</p>
+<p>语法:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border</span>: border-width || border-style || border-color;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>border-width</strong></td>
+<td>单位 px</td>
+<td>定义边框粗细</td>
+</tr>
+<tr>
+<td><strong>border-style</strong></td>
+<td>solid &#x2F; dashed &#x2F; dotted</td>
+<td>定义边框样式</td>
+</tr>
+<tr>
+<td><strong>border-color</strong></td>
+<td>预定义颜色 &#x2F; 十六进制 &#x2F; RGB代码</td>
+<td>定义边框颜色</td>
+</tr>
+</tbody></table>
+<p>复合属性写法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border</span>: border-width border-style border-color;(没有顺序)</span><br></pre></td></tr></table></figure>
+
+<p>也可以只定义其中一边的边框：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>border-top</strong></td>
+<td>定义上边框</td>
+</tr>
+<tr>
+<td><strong>border-bottom</strong></td>
+<td>定义下边框</td>
+</tr>
+<tr>
+<td><strong>border-left</strong></td>
+<td>定义左边框</td>
+</tr>
+<tr>
+<td><strong>border-right</strong></td>
+<td>定义右边框</td>
+</tr>
+</tbody></table>
+<p>表格的边框：</p>
+<p>border-collapse 属性控制浏览器绘制表格边框的方式，它控制相邻单元格的边框</p>
+<p>语法 ：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-collapse</span>: separate | collapse;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>separate</strong></td>
+<td>边框独立（默认）</td>
+</tr>
+<tr>
+<td><strong>collapse</strong></td>
+<td>相邻边框被合并</td>
+</tr>
+</tbody></table>
+<h5 id="padding（内边距，内边距会影响盒子的实际大小）："><a href="#padding（内边距，内边距会影响盒子的实际大小）：" class="headerlink" title="padding（内边距，内边距会影响盒子的实际大小）："></a>padding（内边距，内边距会影响盒子的实际大小）：</h5><p>padding 可以设置内边距，即边框与内容之间的距离</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">padding</span>: length...;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1个length值，设置的是<strong>上下左右</strong>的内边距</li>
+<li>2个length值，<strong>第一个值用于上－下</strong>内边距，<strong>第二个值用于左－右</strong>内边距</li>
+<li>3个length值，<strong>第一个值用于上</strong>内边距，<strong>第二个值用于左－右</strong>内边距，<strong>第三个值用于下</strong>内边距</li>
+<li>4个length值，将按<strong>上－右－下－左的顺序</strong>作用于四边的内边距</li>
+</ul>
+<p>也可以只定义其中一边的内边距：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>padding-top</strong></td>
+<td>定义上内边距</td>
+</tr>
+<tr>
+<td><strong>padding-bottom</strong></td>
+<td>定义下内边距</td>
+</tr>
+<tr>
+<td><strong>padding-left</strong></td>
+<td>定义左内边距</td>
+</tr>
+<tr>
+<td><strong>padding-right</strong></td>
+<td>定义右内边距</td>
+</tr>
+</tbody></table>
+<p>注意：<strong>如果盒子本身没有指定 width &#x2F; height 属性的大小，则此时 padding 不会撑开盒子大小</strong></p>
+<h5 id="margin（外边距）："><a href="#margin（外边距）：" class="headerlink" title="margin（外边距）："></a>margin（外边距）：</h5><p>margin属性用于设置外边距，即控制盒子和盒子之间的距离</p>
+<p>语法:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">margin</span>: length...</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1个length值，设置的是<strong>上下左右</strong>的外边距</li>
+<li>2个length值，<strong>第一个值用于上－下</strong>外边距，<strong>第二个值用于左－右</strong>外边距</li>
+<li>3个length值，<strong>第一个值用于上</strong>外边距，<strong>第二个值用于左－右</strong>外边距，<strong>第三个值用于下</strong>外边距</li>
+<li>4个length值，将按<strong>上－右－下－左的顺序</strong>作用于四边的外边距</li>
+</ul>
+<p>也可以只定义其中一边的外边距：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>margin-top</strong></td>
+<td>定义上外边距</td>
+</tr>
+<tr>
+<td><strong>margin-bottom</strong></td>
+<td>定义下外边距</td>
+</tr>
+<tr>
+<td><strong>margin-left</strong></td>
+<td>定义左外边距</td>
+</tr>
+<tr>
+<td><strong>margin-right</strong></td>
+<td>定义右外边距</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="四、外边距典型应用"><a href="#四、外边距典型应用" class="headerlink" title="四、外边距典型应用"></a>四、外边距典型应用</h3><p>外边距可以让块元素盒子水平居中，但是必须满足两个条件</p>
+<ul>
+<li>盒子<strong>必须指定了宽度</strong></li>
+<li>盒子<strong>左右的外边距都设置为auto</strong></li>
+</ul>
+<p>写法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 写法一 */</span></span><br><span class="line"><span class="attribute">margin-left</span>: auto;</span><br><span class="line"><span class="attribute">margin-right</span>: auto;</span><br><span class="line"><span class="comment">/* 写法二 */</span></span><br><span class="line"><span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line"><span class="comment">/* 写法三 */</span></span><br><span class="line"><span class="attribute">margin</span>: auto;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ul>
+<li>以上方法是让块元素水平居中</li>
+<li><strong>要使行内元素或者行内块元素水平居中给其父元素添加 text-align: center</strong></li>
+</ul>
+<hr>
+<h3 id="五、外边距合并"><a href="#五、外边距合并" class="headerlink" title="五、外边距合并"></a>五、外边距合并</h3><p>使用margin定义块元素的垂直外边距时，可能会出现外边距的合并</p>
+<h5 id="相邻块元素垂直外边距的合并："><a href="#相邻块元素垂直外边距的合并：" class="headerlink" title="相邻块元素垂直外边距的合并："></a>相邻块元素垂直外边距的合并：</h5><p>当上下相邻的两个块元素(兄弟关系)相遇时，如果上面的元素有下边距，下面的元素有上边距</p>
+<p>则它们之间的垂直距离是取决于两个值中的较大者，这种现象被称为相邻块元素垂直外边距的合并</p>
+<p>解决方案：</p>
+<ul>
+<li><strong>尽量只给其中的一个盒子加margin值</strong></li>
+</ul>
+<h5 id="嵌套块元素垂直外边距的塌陷："><a href="#嵌套块元素垂直外边距的塌陷：" class="headerlink" title="嵌套块元素垂直外边距的塌陷："></a>嵌套块元素垂直外边距的塌陷：</h5><p>对于两个嵌套关系(父子关系)的块元素，若父元素有上边距同时子元素也有上边距的情况下</p>
+<p>此时父元素会塌陷较大的外边距值，这种现象被称为嵌套块元素垂直外边距的塌陷</p>
+<p>解决方案：</p>
+<ul>
+<li>可以为父元素定义上边框</li>
+<li>可以为父元素定义上内边距</li>
+<li><strong>可以为父元素添加 overflow: hidden</strong></li>
+</ul>
+<hr>
+<h3 id="六、清除内外边距"><a href="#六、清除内外边距" class="headerlink" title="六、清除内外边距"></a>六、清除内外边距</h3><p>网页元素很多都带有默认的内外边距，并且<strong>不同浏览器的默认值也不一致</strong>，因此我们在布局前，首先要<strong>清除网页元素的内外边距</strong></p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距，但是<strong>转换为块元素或行内元素</strong>就可以了</p>
+<hr>
+<h3 id="七、CSS3新增的盒子样式"><a href="#七、CSS3新增的盒子样式" class="headerlink" title="七、CSS3新增的盒子样式"></a>七、CSS3新增的盒子样式</h3><h5 id="圆角边框："><a href="#圆角边框：" class="headerlink" title="圆角边框："></a>圆角边框：</h5><p>可以设置元素的外边框圆角</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-radius</span>: length;</span><br></pre></td></tr></table></figure>
+
+<p>radius 半径（圆的半径）原理：（椭）圆与边框的交集（相切）形成圆角效果</p>
+<p>注意：</p>
+<ul>
+<li>参数值可以为<strong>数值</strong>或<strong>百分比</strong>（高度的百分比）的形式</li>
+<li>参数值也可以有多个值，也可以指定一个角</li>
+<li>当有两个值时，<strong>第一个设置的左上和右下角</strong>，<strong>第二个设置的左下和右上角</strong>（对角关系）</li>
+<li>当有四个值时，分别代表<strong>左上角－右上角－右下角－左下角</strong>（顺时针）</li>
+<li>也可以分开写，例如：border-top-left-radius（左上角） 或者 border-top-right-radius（右上角）等</li>
+</ul>
+<h5 id="盒子阴影："><a href="#盒子阴影：" class="headerlink" title="盒子阴影："></a>盒子阴影：</h5><p>可以为盒子添加阴影</p>
+<p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: h-shadow v-shadow blur spread color inset;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>h-shadow</strong></td>
+<td>必需，水平阴影的位置，允许为负值</td>
+</tr>
+<tr>
+<td><strong>v-shadow</strong></td>
+<td>必需，垂直阴影的位置，允许为负值</td>
+</tr>
+<tr>
+<td><strong>blur</strong></td>
+<td>可选，模糊距离</td>
+</tr>
+<tr>
+<td><strong>spread</strong></td>
+<td>可选，阴影尺寸</td>
+</tr>
+<tr>
+<td><strong>color</strong></td>
+<td>可选，阴影的颜色</td>
+</tr>
+<tr>
+<td><strong>inset</strong></td>
+<td>可选，将外部阴影（outset）改为内部阴影</td>
+</tr>
+</tbody></table>
+<hr>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: chewenjie</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-02-13</span><i class="fa fa-tag"></i><span class="leancloud_visitors"></span><span>大约2346个字, 7分钟49秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2022/02/13/CSS学习笔记第四章-三大特性及盒子模型/,鱼吃猫,CSS学习笔记第四章-三大特性及盒子模型,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2022/02/14/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%B5%AE%E5%8A%A8/" title="CSS学习笔记第五章-浮动">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2022/02/12/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%BC%95%E5%85%A5%E5%92%8C%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/" title="CSS学习笔记第三章-引入和元素显示模式">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

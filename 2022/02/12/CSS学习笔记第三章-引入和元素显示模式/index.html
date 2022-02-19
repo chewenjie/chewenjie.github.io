@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="chewenjie"><title>CSS学习笔记第三章-引入和元素显示模式 · 鱼吃猫</title><meta name="description" content="一、CSS引入方式按照CSS样式书写的位置(或者引入的方式)，CSS样式表可以分为三大类
+行内样式表（行内式）：行内样式表是在元素标签内部的 style 属性中设定CSS样式，适合于修改简单样式
+例如：
+1&amp;lt;div style=&amp;quot;color: red; font-size: 12px"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.webp"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首页</a></li><li> <a href="/archives">目录</a></li><li> <a href="/tags">标签</a></li><li> <a href="/about">关于</a></li><li> <a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/logo@2x.webp" style="width:200px;" alt="favicon"><h3 title=""><a href="/">鱼吃猫</a></h3><div class="description"><p>一个简单而美丽的博客</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/chewenjie"><i class="fa fa-github"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> chewenjie</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>CSS学习笔记第三章-引入和元素显示模式</a></h3></div><div class="post-content"><p><h3 id="一、CSS引入方式"><a href="#一、CSS引入方式" class="headerlink" title="一、CSS引入方式"></a>一、CSS引入方式</h3><p>按照CSS样式书写的位置(或者引入的方式)，CSS样式表可以分为三大类</p>
+<h5 id="行内样式表（行内式）："><a href="#行内样式表（行内式）：" class="headerlink" title="行内样式表（行内式）："></a>行内样式表（行内式）：</h5><p>行内样式表是在元素标签内部的 style 属性中设定CSS样式，适合于修改简单样式</p>
+<p>例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> style=&quot;<span class="attribute">color</span>: red; <span class="attribute">font-size</span>: <span class="number">12px</span><span class="string">&quot;&gt;青春不常在，抓紧谈恋爱&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>style 其实就是标签的属性，在双引号中，写法要符合CSS规范</p>
+<p>由于书写繁琐，并且没有体现出结构与样式相分离的思想，不推荐大量使用<strong>（实际开发，几乎不使用）</strong></p>
+<h5 id="内部样式表（嵌入式）："><a href="#内部样式表（嵌入式）：" class="headerlink" title="内部样式表（嵌入式）："></a>内部样式表（嵌入式）：</h5><p>内部样式表是写到HTML文档内部，将所有的CSS代码抽取出来，单独放到一个 style 标签中</p>
+<p>style 标签理论上可以放在HTML文档的任何地方，但一般会放在文档的 head 标签中</p>
+<p>通过此种方式，可以方便控制当前整个页面中的元素样式设置</p>
+<p>代码结构清晰 ，但是并没有实现结构与样式完全分离</p>
+<p>使用内部样式表设定CSS，通常也被称为嵌入式引入</p>
+<h5 id="外部样式表（链接式）："><a href="#外部样式表（链接式）：" class="headerlink" title="外部样式表（链接式）："></a>外部样式表（链接式）：</h5><p>实际开发都是外部样式表，适合于样式比较多的情况</p>
+<p>核心：<strong>样式单独写到CSS文件中，之后把CSS文件引入到HTML页面按中使用</strong></p>
+<p>引入外部样式表分为两步：</p>
+<ul>
+<li>新建一个后缀名为 .css 的样式文件，把所有CSS代码都写入此文件中</li>
+<li>在HTML文档中，使用&lt;link&gt;标签引入这个文件</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css文件路径&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二、元素显示模式"><a href="#二、元素显示模式" class="headerlink" title="二、元素显示模式"></a>二、元素显示模式</h3><h5 id="什么是元素显示模式："><a href="#什么是元素显示模式：" class="headerlink" title="什么是元素显示模式："></a>什么是元素显示模式：</h5><p>网页的标签非常多，在不同地方会用到不同类型的标签，了解它们的特点可以更好的布局我们的网页</p>
+<p>元素显示模式就是元素（标签）以什么方式进行显示，例如：div 自己独占一行，一行可以放多个 span</p>
+<p>HTML元素一般分为<strong>块元素</strong>和<strong>行内元素</strong>两种类型</p>
+<h5 id="块元素："><a href="#块元素：" class="headerlink" title="块元素："></a>块元素：</h5><p>常见的块元素有 h1 ~ h6、p、div、ul、ol、li 等标签，其中 div 标签是最典型的块元素</p>
+<p>特点：</p>
+<ul>
+<li>比较霸道，自己独占一行</li>
+<li>高度、宽度、外边距以及内边距都可以控制</li>
+<li>宽度默认是容器（父级元素）的宽度</li>
+<li>是一个容器及盒子，里面可以块元素和行内元素</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>文字类的元素内不能使用块元素</li>
+<li>p 标签主要用于存放文字，因此 p 标签里面不能放块元素</li>
+<li>同理，h1 ~ h6 等都是文字类块元素标签，里面也不能放其他块元素</li>
+</ul>
+<h5 id="行内元素（内联元素）："><a href="#行内元素（内联元素）：" class="headerlink" title="行内元素（内联元素）："></a>行内元素（内联元素）：</h5><p>常见的行内元素有a、strong、b、em、i、del、s、ins、u、span 等标签，其中 span 是最典型的行内元素</p>
+<p>特点：</p>
+<ul>
+<li>相邻行内元素在一行上</li>
+<li>高度、宽度直接设置是无效的</li>
+<li>宽度默认是它本身内容的宽度</li>
+<li>行内元素只能容纳文本或其他行内元素</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>超链接 a 标签里面不能再放超链接 a 标签</li>
+<li>特殊情况超链接 a 标签里面可以放块级元素，但是给超链接 a 标签转换一下块级模式最安全</li>
+</ul>
+<h5 id="行内块元素："><a href="#行内块元素：" class="headerlink" title="行内块元素："></a>行内块元素：</h5><p>在行内元素中有几个特殊的标签 img、input、td 等标签，它们同时具有块元素和行内元素的特点，称之为行内块元素</p>
+<p>特点 ：</p>
+<ul>
+<li>和相邻行内元素及行内块元素在一行上，但是他们直接会有空白缝隙，一行可以显示多个（行内元素特点）</li>
+<li>宽度默认就是它本身内容的宽度（行内元素特点）</li>
+<li>高度、宽度、外边距和内边距都可以控制（块元素特点）</li>
+</ul>
+<h5 id="CSS元素显示模式转换："><a href="#CSS元素显示模式转换：" class="headerlink" title="CSS元素显示模式转换："></a>CSS元素显示模式转换：</h5><p>特殊情况下，我们需要元素模式的转换，简单理解就是一种模式的元素需要另一种模式的特性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 转换为块元素语法 */</span></span><br><span class="line">dispaly: block;</span><br><span class="line"><span class="comment">/* 转换为行内元素语法 */</span></span><br><span class="line">dispaly: inline;</span><br><span class="line"><span class="comment">/* 转换为行内块元素语法 */</span></span><br><span class="line">ispaly: inline-block;</span><br></pre></td></tr></table></figure>
+
+<hr>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: chewenjie</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-02-12</span><i class="fa fa-tag"></i><span class="leancloud_visitors"></span><span>大约1182个字, 3分钟56秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2022/02/12/CSS学习笔记第三章-引入和元素显示模式/,鱼吃猫,CSS学习笔记第三章-引入和元素显示模式,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2022/02/13/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7%E5%8F%8A%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" title="CSS学习笔记第四章-三大特性及盒子模型">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2022/02/11/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%AD%97%E4%BD%93%E3%80%81%E6%96%87%E6%9C%AC%E5%92%8C%E8%83%8C%E6%99%AF%20/" title="CSS学习笔记第二章-字体、文本和背景">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
